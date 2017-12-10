@@ -1,19 +1,13 @@
 package com.east.helloboot.dto;
 
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import java.util.Arrays;
-import java.util.Collection;
 
 /**
  * Created by yaowg on 2017/11/14
  */
 @Entity
-public class Reader implements UserDetails{
+public class Reader /*implements UserDetails*/{
 
     @Id
     private String username;
@@ -38,17 +32,17 @@ public class Reader implements UserDetails{
         this.password = password;
     }
 
-    @Override
+//    @Override
     public String getUsername() {
         return username;
     }
 
-    @Override
+//    @Override
     public String getPassword() {
         return password;
     }
 
-    @Override
+   /* @Override
     public boolean isEnabled() {
         return true;
     }
@@ -56,11 +50,11 @@ public class Reader implements UserDetails{
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return Arrays.asList(new SimpleGrantedAuthority("READER"));
-    }
+    }*/
 
 
 
-    @Override
+   /* @Override
     public boolean isAccountNonExpired() {
         return true;
     }
@@ -73,5 +67,5 @@ public class Reader implements UserDetails{
     @Override
     public boolean isCredentialsNonExpired() {
         return true;
-    }
+    }*/
 }
